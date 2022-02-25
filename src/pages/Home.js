@@ -1,0 +1,38 @@
+import React, { useState } from "react";
+import Carousel from "../components/Carousel";
+import Navbar from "../components/Navbar";
+import { SliderData } from "../components/SliderData";
+import ProductInfo from "../components/ProductInfo";
+import { Container } from "../components/styles/Container.styled";
+import Badge from "../components/Badge";
+
+const Home = () => {
+  const [productInfo, setProductInfo] = useState({});
+
+  // Set and Store delete button click
+  const [deleteInfo, setDelete] = useState(false);
+
+  console.log(deleteInfo);
+
+  console.log(productInfo);
+
+  return (
+    <div>
+      <Container>
+        <Navbar productInfo={productInfo} setDelete={setDelete} />
+        {/* <Badge count={productInfo.count} /> */}
+        <main>
+          <Carousel slides={SliderData} />
+          <ProductInfo
+            // onCount={cartInfoHandler}
+            setProductInfo={setProductInfo}
+            deleteInfo={deleteInfo}
+            setDelete={setDelete}
+          />
+        </main>
+      </Container>
+    </div>
+  );
+};
+
+export default Home;
