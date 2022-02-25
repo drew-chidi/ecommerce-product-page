@@ -38,9 +38,6 @@ const Cart = ({ info, setDelete }) => {
     setPrice(info.price);
     setCount(info.count);
   }, [info.price, info.count]);
-  console.log(price);
-  console.log(count);
-  console.log(typeof price);
 
   return (
     <CartContainer>

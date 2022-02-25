@@ -4,17 +4,12 @@ import Navbar from "../components/Navbar";
 import { SliderData } from "../components/SliderData";
 import ProductInfo from "../components/ProductInfo";
 import { Container } from "../components/styles/Container.styled";
-import Badge from "../components/Badge";
 
 const Home = () => {
   const [productInfo, setProductInfo] = useState({});
 
   // Set and Store delete button click
   const [deleteInfo, setDelete] = useState(false);
-
-  console.log(deleteInfo);
-
-  console.log(productInfo);
 
   return (
     <div>

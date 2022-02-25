@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { devices } from "./devices";
-import { Button } from "./Button.styled";
 
 export const InfoContainer = styled.section`
   padding: 0 20px;

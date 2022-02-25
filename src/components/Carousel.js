@@ -51,7 +51,6 @@ const Carousel = ({ slides }) => {
   const lightBoxDisplayHandler = () => {
     setLightBoxDisplay(true);
   };
-  console.log(lightBoxDisplay);
 
   // HIDE LIGHTBOX
   const hideLightBoxHandler = () => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import plus from "../assets/images/icon-plus.svg";
 import minus from "../assets/images/icon-minus.svg";
 import { ReactComponent as Cart } from "../assets/images/icon-cart.svg";
@@ -40,9 +40,9 @@ const ProductInfo = ({ setProductInfo, deleteInfo, setDelete }) => {
       setCount((prevState) => prevState - 1);
     }
   };
-  console.log(count);
+
   return (
-    <>
+    <Fragment>
       <InfoContainer>
         <Title>SNEAKER COMPANY</Title>
         <div>
@@ -83,7 +83,7 @@ const ProductInfo = ({ setProductInfo, deleteInfo, setDelete }) => {
           </Flex>
         </div>
       </InfoContainer>
-    </>
+    </Fragment>
   );
 };
 
