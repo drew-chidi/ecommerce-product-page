@@ -47,7 +47,7 @@ export const StyledDiv = styled.div`
   @media ${devices.xl} {
     /* width: 610px; */
     /* margin: auto; */
-    width: 450px;
+    width: 420px;
   }
 `;
 
@@ -184,10 +184,11 @@ export const ImageContainer = styled.div`
     }
   }
   @media ${devices.xl} {
-    margin: 40px 0 0 0;
+    /* margin: 40px 0 0 0; */
+    margin: 0;
     & > div {
       /* width: 450px; */
-      width: 400px;
+      width: 350px;
     }
   }
 `;

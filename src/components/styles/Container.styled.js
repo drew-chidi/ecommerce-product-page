@@ -4,7 +4,7 @@ import { devices } from "./devices";
 export const Container = styled.div`
   text-align: center;
   margin: 0 auto;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 
   main {
     display: flex;
@@ -15,6 +15,11 @@ export const Container = styled.div`
       flex-direction: row;
       align-items: center;
       justify-content: center;
+    }
+  }
+  @media ${devices.xl} {
+    main {
+      padding: 0 40px;
     }
   }
 `;
