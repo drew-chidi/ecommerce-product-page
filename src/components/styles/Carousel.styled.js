@@ -32,8 +32,10 @@ export const CarouselContainer = styled.section`
   }
 
   @media ${devices.xl} {
-    left: 25%;
+    left: 50%;
     margin-left: 0;
+    margin-left: -220px;
+    margin-top: -220px;
   }
 `;
 
@@ -43,8 +45,9 @@ export const StyledDiv = styled.div`
     margin: auto;
   }
   @media ${devices.xl} {
-    width: 610px;
+    /* width: 610px; */
     /* margin: auto; */
+    width: 450px;
   }
 `;
 
@@ -74,7 +77,7 @@ export const LightGrid = styled.div`
 
   @media ${devices.xl} {
     & > div {
-      width: 130px;
+      width: 110px;
       padding: 0 10px;
       margin: auto;
     }
@@ -183,7 +186,8 @@ export const ImageContainer = styled.div`
   @media ${devices.xl} {
     margin: 40px 0 0 0;
     & > div {
-      width: 450px;
+      /* width: 450px; */
+      width: 400px;
     }
   }
 `;
