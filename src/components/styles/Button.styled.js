@@ -10,6 +10,8 @@ export const Button = styled.button`
   width: ${({ width }) => width || "auto"};
   margin: ${({ margin }) => margin || "auto"};
   font-weight: 700;
+  /* display: ${({ display }) => display || "block"}; */
+  display: ${({ $display }) => $display};
 
   &:hover {
   }

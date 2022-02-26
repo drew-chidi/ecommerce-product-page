@@ -21,9 +21,9 @@ export const CarouselContainer = styled.section`
     display: ${(prop) => (prop.display === true ? "block" : "none")};
     position: absolute;
     left: 50%;
-    margin-left: -300px;
-    margin-top: -300px;
-    top: 42%;
+    margin-left: -220px;
+    margin-top: -260px;
+    top: 50%;
     z-index: 4;
 
     img {
@@ -32,22 +32,22 @@ export const CarouselContainer = styled.section`
   }
 
   @media ${devices.xl} {
-    left: 50%;
+    /* left: 50%;
     margin-left: 0;
     margin-left: -220px;
-    margin-top: -220px;
+    margin-top: -220px; */
   }
 `;
 
 export const StyledDiv = styled.div`
   @media ${devices.lg} {
-    width: 500px;
+    width: 350px;
     margin: auto;
   }
   @media ${devices.xl} {
     /* width: 610px; */
     /* margin: auto; */
-    width: 420px;
+    width: 400px;
   }
 `;
 
@@ -62,8 +62,8 @@ export const LightGrid = styled.div`
   }
 
   & > div {
-    width: 115px;
-    padding: 0 16px 0 0;
+    width: 90px;
+    padding: 0 8px;
     margin: auto;
   }
   img {
@@ -86,10 +86,12 @@ export const LightGrid = styled.div`
 
 export const StyledClose = styled.div`
   display: none;
+
   @media ${devices.lg} {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 32px;
+    padding-right: 34px;
   }
 `;
 
@@ -110,14 +112,13 @@ export const NextLogo = styled.div`
   }
 
   @media ${devices.lg} {
-    margin: -20px -20px 0 0;
+    margin: -30px 0px 0 0;
     top: 50%;
-    right: 0%;
+    /* right: 0%; */
     height: 60px;
     width: 60px;
   }
   @media ${devices.xl} {
-    top: 50%;
     /* right: -7%; */
     img {
       width: 20px;
@@ -141,15 +142,13 @@ export const PrevLogo = styled.div`
     /* max-width: 100%; */
   }
   @media ${devices.lg} {
-    margin: -20px 0px 0 -20px;
+    margin: -30px 0px 0 0px;
     top: 50%;
-    left: 0%;
     height: 60px;
     width: 60px;
   }
   @media ${devices.xl} {
-    top: 50%;
-    left: 0%;
+    /* left: 0%; */
     img {
       width: 20px;
     }
@@ -157,6 +156,7 @@ export const PrevLogo = styled.div`
 export const ImageContainer = styled.div`
   display: none;
   @media ${devices.lg} {
+    /* position: relative; */
     display: block;
     margin: 0 0 0 0;
     padding: 0 0 0 100px;
@@ -180,7 +180,7 @@ export const ImageContainer = styled.div`
   }
   @media ${devices.lg} {
     & > div {
-      width: 400px;
+      width: 300px;
     }
   }
   @media ${devices.xl} {
@@ -211,8 +211,22 @@ export const ImageGrid = styled.div`
     margin: 10px 0 0 0;
   }
 
+  button: {
+    outline: solid 3px transparent;
+  }
+
+  button:focus {
+    outline: solid 3px hsl(26, 100%, 55%);
+  }
+
   img {
     border-radius: 1rem;
+    &:hover {
+      opacity: 20%;
+    }
+    &:focus {
+      outline: solid 2px hsl(26, 100%, 55%);
+    }
   }
 `;
 

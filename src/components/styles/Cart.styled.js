@@ -11,7 +11,12 @@ export const CartContainer = styled.div`
   @media ${devices.lg} {
     display: flex;
     justify-content: flex-end;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
+    text-align: left;
+
+    p {
+      font-size: 1rem;
+    }
   }
 `;
 export const Box = styled.div`
@@ -27,7 +32,12 @@ export const Box = styled.div`
   @media ${devices.lg} {
     justify-content: flex-end;
     margin: 20px 50px 0 0;
-    width: 400px;
+    width: 350px;
+  }
+  @media ${devices.xl} {
+    width: 450px;
+    margin: 20px 80px 0 0;
+    min-height: 200px;
   }
 `;
 
@@ -38,6 +48,10 @@ export const Title = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
   color: black;
+
+  @media ${devices.lg} {
+    font-size: 1rem;
+  }
 `;
 
 export const Flex = styled.div`
@@ -77,4 +91,14 @@ export const Image = styled.div`
   img {
     border-radius: 6px;
   }
+`;
+
+export const EmptyCart = styled.p`
+  text-align: center;
+  color: gray;
+  font-weight: 500;
+  font-size: 0.875rem;
+  /* margin: 40px 0 0 0; */
+  padding: 30px 0 0 0;
+  margin: auto;
 `;

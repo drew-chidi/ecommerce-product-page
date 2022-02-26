@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
     padding: 40px 90px;
   }
   @media ${devices.xl} {
-    padding-right: 125px;
+    padding: 25px 125px 25px 90px;
   }
   @media ${devices.xxl} {
     padding: 40px 150px;

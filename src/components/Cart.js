@@ -8,6 +8,7 @@ import {
   Image,
   Flex,
   Total,
+  EmptyCart,
 } from "./styles/Cart.styled";
 
 import Product from "../assets/images/image-product-1-thumbnail.jpg";
@@ -16,23 +17,12 @@ const Cart = ({ info, setDelete }) => {
   const [price, setPrice] = useState("");
   const [count, setCount] = useState(0);
 
-  // const deleteHandler = () => {
-  //   console.log("I am clicked");
-  //   setDelete(true);
-  //   info.price = "0";
-  //   info.count = 0;
-  //   setDelete(false);
-  //   console.log(info);
-  // };
   const deleteHandler = () => {
-    console.log("I am clicked");
     setDelete(true);
     setPrice("0");
     setCount(0);
     info.count = 0;
     info.price = "0";
-    // setDelete(false);
-    console.log(info);
   };
   useEffect(() => {
     setPrice(info.price);
@@ -47,14 +37,14 @@ const Cart = ({ info, setDelete }) => {
         <div>
           {/* Conditionally display cart items */}
           {info.count === 0 || info.count === undefined ? (
-            <p>Your cart is empty.</p>
+            <EmptyCart>Your cart is empty.</EmptyCart>
           ) : (
             <Flex>
               <Image>
                 <img src={Product} alt='' />
               </Image>
               <div>
-                <p>Autumn Limited Edition...</p>
+                <p>Fall Limited Edition Edition Sneakers</p>
                 <p>{`$${price} x ${count} `}</p>
                 <Total>{`$${parseFloat(price) * count}`}</Total>
               </div>
@@ -66,7 +56,14 @@ const Cart = ({ info, setDelete }) => {
           )}
         </div>
         <div style={{ width: "100%", padding: "0 20px" }}>
-          <Button bg='hsl(26, 100%, 55%)' color='#fff' width='100%'>
+          <Button
+            bg='hsl(26, 100%, 55%)'
+            color='#fff'
+            width='100%'
+            $display={
+              info.count === 0 || info.count === undefined ? "none" : "block"
+            }
+          >
             Checkout
           </Button>
         </div>

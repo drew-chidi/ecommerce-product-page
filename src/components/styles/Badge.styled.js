@@ -20,10 +20,8 @@ export const BadgeContainer = styled.div`
   }
   @media ${devices.xl} {
     top: 5%;
-    /* right: 14%; */
   }
   @media ${devices.xxl} {
-    top: 5%;
-    /* right: 14%; */
+    top: 8%;
   }
 `;
