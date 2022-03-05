@@ -15,11 +15,9 @@ const Home = () => {
     <div>
       <Container>
         <Navbar productInfo={productInfo} setDelete={setDelete} />
-        {/* <Badge count={productInfo.count} /> */}
         <main>
           <Carousel slides={SliderData} />
           <ProductInfo
-            // onCount={cartInfoHandler}
             setProductInfo={setProductInfo}
             deleteInfo={deleteInfo}
             setDelete={setDelete}

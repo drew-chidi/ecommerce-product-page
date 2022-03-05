@@ -6,6 +6,10 @@ const GlobalStyles = createGlobalStyle`
 *{
     box-sizing: border-box;
 }
+img {
+  max-width: 100%;
+}
+
 html,
 body,
 div,
@@ -20,6 +24,7 @@ h4,
 h5,
 h6,
 p,
+button,
 blockquote,
 pre,
 a,
@@ -93,6 +98,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  background: transparent;
 }
 /* HTML5 display-role reset for older browsers */
 article,

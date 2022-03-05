@@ -10,7 +10,7 @@ import {
   PrevLogo,
   ImageContainer,
   ImageGrid,
-  LightGrid,
+  CarouselGrid,
   StyledDiv,
   StyledClose,
   Backdrop,
@@ -77,7 +77,7 @@ const Carousel = ({ slides }) => {
               </StyledDiv>
             );
           })}
-          <LightGrid>
+          <CarouselGrid>
             {SliderData.map((slide, index) => {
               return (
                 <div key={index}>
@@ -95,12 +95,11 @@ const Carousel = ({ slides }) => {
                 </div>
               );
             })}
-          </LightGrid>
+          </CarouselGrid>
         </CarouselContainer>
       </Backdrop>
 
       {/* LightBox, Large Screens */}
-
       <ImageContainer>
         {SliderData.map((slide, index) => {
           return (
@@ -112,7 +111,11 @@ const Carousel = ({ slides }) => {
         <ImageGrid>
           {SliderData.map((slide, index) => {
             return (
-              <div key={index} onClick={lightBoxDisplayHandler}>
+              <div
+                key={slide.id}
+                onClick={lightBoxDisplayHandler}
+                id={slide.id}
+              >
                 <button onClick={currentHandler} key={index} data-index={index}>
                   <img src={slide.image} alt='product' />
                 </button>

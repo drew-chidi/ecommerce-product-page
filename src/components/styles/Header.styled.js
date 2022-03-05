@@ -28,30 +28,77 @@ export const NavContainer = styled.nav`
   display: flex;
   align-items: center;
 `;
+
 export const NavLinks = styled.nav`
-  display: none;
+  display: ${(prop) => (prop.display === true ? "block" : "none")};
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: white;
+  height: 100vh;
+  width: 66%;
+  z-index: 10;
+
+  @media ${devices.mobileL} {
+    width: 50%;
+  }
+
+  @media ${devices.md} {
+    width: 40%;
+  }
+
   @media ${devices.lg} {
+    display: flex;
+    background: transparent;
+    height: auto;
+    position: static;
     display: flex;
     align-items: center;
     text-decoration: none;
-  }
-`;
-export const StyledList = styled.ul`
-  display: flex;
-  align-items: center;
-`;
-export const ListItem = styled.li`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  margin: 0 30px;
-  color: gray;
-  &:hover {
-    color: black;
+    weight: auto;
   }
 `;
 
-export const StyledNav = styled.div`
+export const Backdrop = styled.div`
+    display: ${(prop) => (prop.display === true ? "block" : "none")};
+    background: rgba(0, 0, 0, 0.75);
+    display: fixed;
+  
+  @media {devices.lg}{
+    display: none;
+  }
+`;
+
+export const StyledList = styled.ul`
+  cursor: pointer;
+  margin: 48px 0;
+
+  @media ${devices.lg} {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+`;
+
+export const ListItem = styled.li`
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 0 30px;
+  padding: 20px 0;
+
+  @media ${devices.lg} {
+    color: gray;
+    font-weight: 500;
+    padding: auto;
+    &:hover {
+      color: black;
+    }
+  }
+`;
+
+export const StyledMenu = styled.div`
   padding: 0 20px 0 0;
   font-weight: 700;
   color: gray;
@@ -62,6 +109,20 @@ export const StyledNav = styled.div`
     display: none;
   }
 `;
+
+export const StyledClose = styled.div`
+  font-weight: 700;
+  fill: gray;
+  display: flex;
+  font-size: 2rem;
+  margin: 0 30px;
+  padding: 24px 0 0 0;
+
+  @media ${devices.lg} {
+    display: none;
+  }
+`;
+
 export const StyledCart = styled.button`
   padding: 0 20px 0 0;
   font-weight: 700;
@@ -70,6 +131,7 @@ export const StyledCart = styled.button`
   border: 0;
   background: transparent;
 `;
+
 export const Avatar = styled.div`
   width: 32px;
   height: 32px;

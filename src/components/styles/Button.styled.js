@@ -10,7 +10,6 @@ export const Button = styled.button`
   width: ${({ width }) => width || "auto"};
   margin: ${({ margin }) => margin || "auto"};
   font-weight: 700;
-  /* display: ${({ display }) => display || "block"}; */
   display: ${({ $display }) => $display};
 
   &:hover {
@@ -22,8 +21,5 @@ export const Button = styled.button`
     width: 100%;
     text-align: center;
     font-size: 1rem;
-  }
-  img {
-    /* text-align: left; */
   }
 `;

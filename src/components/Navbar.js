@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import {
   Avatar,
   NavContainer,
-  StyledNav,
+  StyledMenu,
+  StyledClose,
   StyledHeader,
   StyledCart,
   NavLinks,
@@ -12,6 +13,7 @@ import {
 } from "./styles/Header.styled";
 import { ReactComponent as CartIcon } from "../assets/images/icon-cart.svg";
 import { ReactComponent as Menu } from "../assets/images/icon-menu.svg";
+import { ReactComponent as MenuClose } from "../assets/images/icon-close.svg";
 
 import avatar from "../assets/images/image-avatar.png";
 import logo from "../assets/images/logo.svg";
@@ -20,13 +22,19 @@ import Badge from "./Badge";
 
 const Navbar = (props) => {
   const [showCart, setShowCart] = useState(false);
+  const [navMenu, setNavMenu] = useState(false);
+
+  // Function to Toggle Menu
+  const toggleMenuHandler = () => {
+    setNavMenu((menu) => !menu);
+  };
 
   // Function to show or hide cart inf0
   const cartHandler = () => {
     setShowCart((prev) => !prev);
   };
   return (
-    <>
+    <Fragment>
       {showCart && (
         <Cart info={props.productInfo} setDelete={props.setDelete} />
       )}
@@ -35,13 +43,22 @@ const Navbar = (props) => {
         <div>
           <StyledHeader>
             <NavContainer className='navlinks'>
-              <StyledNav>
-                <Menu />
-              </StyledNav>
+              {/* Conditionally shows the Hamburger Menu Icon */}
+              {!navMenu && (
+                <StyledMenu>
+                  <Menu onClick={toggleMenuHandler} />
+                </StyledMenu>
+              )}
+
               <div>
                 <img src={logo} alt='company logo' />
               </div>
-              <NavLinks>
+
+              {/* Conditionally shows the Side Tab and the Close-Menu-Icon */}
+              <NavLinks display={navMenu}>
+                <StyledClose>
+                  <MenuClose fill='gray' onClick={toggleMenuHandler} />
+                </StyledClose>
                 <StyledList>
                   <ListItem>Collections</ListItem>
                   <ListItem>Men</ListItem>
@@ -62,7 +79,7 @@ const Navbar = (props) => {
           </StyledHeader>
         </div>
       </HeaderContainer>
-    </>
+    </Fragment>
   );
 };
 

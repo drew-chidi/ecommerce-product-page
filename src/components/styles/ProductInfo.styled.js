@@ -32,6 +32,7 @@ export const InfoContainer = styled.section`
       font-size: 2.5rem;
     }
   }
+
   @media ${devices.xxl} {
     margin: 0 128px;
 
@@ -78,10 +79,12 @@ export const PriceBox = styled.div`
     display: inline-flex;
     align-items: center;
   }
+
   div:nth-child(2) {
     background: hsl(25, 100%, 94%);
     color: hsl(26, 100%, 55%);
   }
+
   P {
     display: inline;
     text-decoration: line-through;
@@ -138,6 +141,7 @@ export const Flex = styled.div`
     items-align: center;
     gap: 16px;
   }
+
   & > Button {
     min-width: 60%;
   }
@@ -145,6 +149,7 @@ export const Flex = styled.div`
   @media ${devices.xl} {
     width: 100%;
   }
+
   @media ${devices.xxl} {
     width: auto;
   }

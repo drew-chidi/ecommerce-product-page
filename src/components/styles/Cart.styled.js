@@ -11,7 +11,6 @@ export const CartContainer = styled.div`
   @media ${devices.lg} {
     display: flex;
     justify-content: flex-end;
-    /* font-size: 1.3rem; */
     text-align: left;
 
     p {
@@ -19,6 +18,7 @@ export const CartContainer = styled.div`
     }
   }
 `;
+
 export const Box = styled.div`
   background: white;
   border-radius: 10px;
@@ -29,11 +29,13 @@ export const Box = styled.div`
     margin: auto;
     width: 500px;
   }
+
   @media ${devices.lg} {
     justify-content: flex-end;
     margin: 20px 50px 0 0;
     width: 350px;
   }
+
   @media ${devices.xl} {
     width: 450px;
     margin: 20px 80px 0 0;
@@ -98,7 +100,6 @@ export const EmptyCart = styled.p`
   color: gray;
   font-weight: 500;
   font-size: 0.875rem;
-  /* margin: 40px 0 0 0; */
   padding: 30px 0 0 0;
   margin: auto;
 `;

@@ -30,13 +30,6 @@ export const CarouselContainer = styled.section`
       border-radius: 1.5rem;
     }
   }
-
-  @media ${devices.xl} {
-    /* left: 50%;
-    margin-left: 0;
-    margin-left: -220px;
-    margin-top: -220px; */
-  }
 `;
 
 export const StyledDiv = styled.div`
@@ -44,41 +37,55 @@ export const StyledDiv = styled.div`
     width: 350px;
     margin: auto;
   }
+
   @media ${devices.xl} {
-    /* width: 610px; */
-    /* margin: auto; */
     width: 400px;
   }
 `;
 
-export const LightGrid = styled.div`
+export const CarouselGrid = styled.div`
   display: none;
-
-  @media ${devices.lg} {
-    display: inline-flex;
-    margin: 20px 0 0 0;
-    padding: 0 20px;
-    position: relative;
-  }
 
   & > div {
     width: 90px;
     padding: 0 8px;
     margin: auto;
   }
-  img {
-    border-radius: 1rem;
+
+  button: {
+    border-radius: 10px;
+    background: blue;
   }
-  button {
-    outline: none;
-    border: 0;
-    background: none;
+
+  button:focus {
+    border: none;
+    outline: solid 3px hsl(26, 100%, 55%);
+    border-radius: 10px;
+  }
+
+  button:focus img {
+    filter: contrast(40%) brightness(120%);
+  }
+
+  img {
+    border-radius: 10px;
+    &:hover {
+      filter: contrast(40%) brightness(150%);
+    }
+  }
+
+  @media ${devices.lg} {
+    display: inline-flex;
+    margin: 20px 0 0 0;
+    position: relative;
+
+    button: {
+      border-radius: 10px;
+    }
   }
 
   @media ${devices.xl} {
     & > div {
-      width: 110px;
-      padding: 0 10px;
       margin: auto;
     }
   }
@@ -91,7 +98,10 @@ export const StyledClose = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-bottom: 32px;
-    padding-right: 34px;
+  }
+
+  @media ${devices.xl} {
+    padding: 0;
   }
 `;
 
@@ -114,12 +124,11 @@ export const NextLogo = styled.div`
   @media ${devices.lg} {
     margin: -30px 0px 0 0;
     top: 50%;
-    /* right: 0%; */
+    right: -7%;
     height: 60px;
     width: 60px;
   }
   @media ${devices.xl} {
-    /* right: -7%; */
     img {
       width: 20px;
     }
@@ -139,29 +148,31 @@ export const PrevLogo = styled.div`
     position: absolute;
     left: 25%;
     top: 25%;
-    /* max-width: 100%; */
   }
+
   @media ${devices.lg} {
+    left: -7%;
     margin: -30px 0px 0 0px;
     top: 50%;
     height: 60px;
     width: 60px;
   }
+
   @media ${devices.xl} {
-    /* left: 0%; */
     img {
       width: 20px;
     }
 `;
+
 export const ImageContainer = styled.div`
   display: none;
   @media ${devices.lg} {
-    /* position: relative; */
     display: block;
     margin: 0 0 0 0;
     padding: 0 0 0 100px;
     z-index: 0;
   }
+
   @media ${devices.xl} {
     padding: 0 0 0 180px;
   }
@@ -178,16 +189,16 @@ export const ImageContainer = styled.div`
     border: 0;
     background: none;
   }
+
   @media ${devices.lg} {
     & > div {
       width: 300px;
     }
   }
+
   @media ${devices.xl} {
-    /* margin: 40px 0 0 0; */
     margin: 0;
     & > div {
-      /* width: 450px; */
       width: 350px;
     }
   }
@@ -196,6 +207,7 @@ export const ImageContainer = styled.div`
 export const ImageBox = styled.div`
   width: 0px;
 `;
+
 export const Image = styled.img`
   height: 500px;
 
@@ -205,10 +217,11 @@ export const Image = styled.img`
 `;
 export const ImageGrid = styled.div`
   display: none;
+
   @media ${devices.lg} {
     display: flex;
-    gap: 10px;
-    margin: 10px 0 0 0;
+    gap: 20px;
+    margin: 15px 0 0 0;
   }
 
   button: {
@@ -216,34 +229,19 @@ export const ImageGrid = styled.div`
   }
 
   button:focus {
+    border: none;
     outline: solid 3px hsl(26, 100%, 55%);
+    border-radius: 10px;
+  }
+
+  button:focus img {
+    filter: contrast(40%) brightness(120%);
   }
 
   img {
-    border-radius: 1rem;
+    border-radius: 10px;
     &:hover {
-      opacity: 20%;
-    }
-    &:focus {
-      outline: solid 2px hsl(26, 100%, 55%);
+      filter: contrast(40%) brightness(150%);
     }
   }
 `;
-
-// export const LightBox = styled.div`
-//   display: none;
-//   @media ${devices.lg} {
-//     display: block;
-//     margin: 40px 0 0 0;
-//     padding: 0 0 0 150px;
-//     position: absolute;
-//     z-index: 1;
-//   }
-
-//   & > div {
-//     width: 500px;
-//   }
-//   img {
-//     border-radius: 1rem;
-//   }
-// `;
