@@ -103,7 +103,7 @@ const Carousel = ({ slides }) => {
       <ImageContainer>
         {SliderData.map((slide, index) => {
           return (
-            <ImageBox key={index}>
+            <ImageBox key={index} onClick={lightBoxDisplayHandler}>
               {index === current && <Image src={slide.image} alt='product' />}
             </ImageBox>
           );
@@ -111,11 +111,7 @@ const Carousel = ({ slides }) => {
         <ImageGrid>
           {SliderData.map((slide, index) => {
             return (
-              <div
-                key={slide.id}
-                onClick={lightBoxDisplayHandler}
-                id={slide.id}
-              >
+              <div key={slide.id} id={slide.id}>
                 <button onClick={currentHandler} key={index} data-index={index}>
                   <img src={slide.image} alt='product' />
                 </button>
