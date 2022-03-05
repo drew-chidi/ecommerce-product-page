@@ -73,6 +73,7 @@ const ProductInfo = ({ setProductInfo, deleteInfo, setDelete }) => {
             </CountContainer>
             <Button
               bg='hsl(26, 100%, 55%)'
+              hover='hsl(25, 100%, 94%)'
               color='#fff'
               width='100%'
               onClick={addToCartHandler}

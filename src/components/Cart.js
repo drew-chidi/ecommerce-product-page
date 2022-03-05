@@ -29,6 +29,7 @@ const Cart = ({ info, setDelete }) => {
     setCount(info.count);
   }, [info.price, info.count]);
 
+  console.log(typeof price);
   return (
     <CartContainer>
       <Box>
@@ -45,13 +46,10 @@ const Cart = ({ info, setDelete }) => {
               </Image>
               <div>
                 <p>Fall Limited Edition Edition Sneakers</p>
-                <p>{`$${price} x ${count} `}</p>
-                <Total>{`$${parseFloat(price) * count}`}</Total>
+                <p>{`$${parseFloat(price).toFixed(2)} x ${count} `}</p>
+                <Total>{`${(parseFloat(price) * count).toFixed(2)}`}</Total>
               </div>
-              <Delete
-                style={{ margin: "0 0 0 30px" }}
-                onClick={deleteHandler}
-              />
+              <Delete style={{ margin: "0 0 0 0px" }} onClick={deleteHandler} />
             </Flex>
           )}
         </div>

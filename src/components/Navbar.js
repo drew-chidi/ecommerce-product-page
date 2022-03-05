@@ -35,10 +35,10 @@ const Navbar = (props) => {
   };
   return (
     <Fragment>
+      <div></div>
       {showCart && (
         <Cart info={props.productInfo} setDelete={props.setDelete} />
       )}
-      <Badge count={props.productInfo.count} />
       <HeaderContainer>
         <div>
           <StyledHeader>
@@ -69,8 +69,13 @@ const Navbar = (props) => {
               </NavLinks>
             </NavContainer>
             <NavContainer>
-              <StyledCart>
-                <CartIcon onClick={cartHandler} />
+              <StyledCart onClick={cartHandler}>
+                <CartIcon />
+
+                {/* Only display Badge when count is above 0 */}
+                {props.productInfo.count !== 0 && (
+                  <Badge count={props.productInfo.count} />
+                )}
               </StyledCart>
               <Avatar>
                 <img src={avatar} alt='avatar' />

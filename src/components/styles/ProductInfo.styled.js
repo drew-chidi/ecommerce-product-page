@@ -116,6 +116,7 @@ export const CountContainer = styled.div`
     border: 0;
     margin: 0 16px;
   }
+
   img {
     width: 22px;
   }

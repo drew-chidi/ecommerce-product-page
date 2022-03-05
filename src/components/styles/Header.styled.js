@@ -59,16 +59,6 @@ export const NavLinks = styled.nav`
   }
 `;
 
-export const Backdrop = styled.div`
-    display: ${(prop) => (prop.display === true ? "block" : "none")};
-    background: rgba(0, 0, 0, 0.75);
-    display: fixed;
-  
-  @media {devices.lg}{
-    display: none;
-  }
-`;
-
 export const StyledList = styled.ul`
   cursor: pointer;
   margin: 48px 0;
@@ -135,8 +125,12 @@ export const StyledCart = styled.button`
 export const Avatar = styled.div`
   width: 32px;
   height: 32px;
-  border: 1px solid gray;
+  border: 2px solid transparent;
   border-radius: 100%;
+
+  &:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+  }
 
   @media ${devices.lg} {
     width: 48px;

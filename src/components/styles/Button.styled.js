@@ -13,6 +13,7 @@ export const Button = styled.button`
   display: ${({ $display }) => $display};
 
   &:hover {
+    background-color: ${({ hover }) => hover || "hsl(26, 100%, 55%)"};
   }
 
   & > p {

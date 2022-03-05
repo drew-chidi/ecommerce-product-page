@@ -72,6 +72,11 @@ export const Flex = styled.div`
     display: inline;
     justify-self: flex-start;
   }
+
+  div {
+    text-align: left;
+  }
+
   @media ${devices.lg} {
     margin: 20px 0 20px 0;
     p {
@@ -82,6 +87,7 @@ export const Flex = styled.div`
 
 export const Total = styled.span`
   color: black;
+  font-weight: 700;
 `;
 
 export const Image = styled.div`
